@@ -23,7 +23,7 @@ git clone https://github.com/rbento/pdf-table-to-csv.git
 # Change directory
 cd pdf-table-to-csv
 
-# Sync and activate the virtual enviroment
+# Sync and activate the virtual environment
 pipenv sync
 pipenv shell
 
