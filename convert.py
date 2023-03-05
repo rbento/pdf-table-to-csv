@@ -4,22 +4,26 @@
 Description: Attempts extracting tables from well-formed PDF files to a CSV.
 --------------------------------------------------------------------------  """
 
+import os
 import sys
 import tabula
 
 
-def replace_extension(source_file, extension):
+CSV = "csv"
+
+
+def replace_extension(source_file, extension = CSV):
     return (source_file.rsplit(".", maxsplit=1)[0]) + "." + extension
 
 
 def is_pdf(source_file):
-    return source_file.lower().endswith(".pdf")
+    return source_file.lower().endswith(".pdf") and os.path.isfile(source_file)
 
 
 def pdf_to_csv(source_file):
     print("Converting", source_file)
-    destination_file = replace_extension(source_file, "csv")
-    tabula.convert_into(source_file, destination_file, pages="all", output_format="csv");
+    destination_file = replace_extension(source_file)
+    tabula.convert_into(source_file, destination_file, pages = "all", output_format = CSV);
     print("> Converted to", destination_file)
 
 
