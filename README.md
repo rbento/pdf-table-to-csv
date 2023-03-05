@@ -5,11 +5,13 @@
 - PDF files containing images or more complex internal structures may not be properly converted.
 
 ### Dependencies
+---
 
 - Python 3.11
 - pipenv
 
 ### Usage
+---
 
 ```bash
 
@@ -33,6 +35,8 @@ python convert.py /path/to/file1.pdf /path/to/file2.pdf
 ```
 
 ### Example
+---
+
 ```bash
 pipenv shell
 (pdf-table-to-csv) ~/Workspace/pdf-table-to-csv $ python convert.py ~/Desktop/tax_slips.pdf ~/Desktop/stocks.py
